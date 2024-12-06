@@ -5,7 +5,6 @@ class LoginTest:
         self.page = page
 
     def login(self, username: str, password: str):
-        """Perform login with provided credentials."""
         self.page.goto("https://www.saucedemo.com/")
         expect(self.page.locator("#user-name")).to_be_visible()
         self.page.locator("#user-name").fill(username)

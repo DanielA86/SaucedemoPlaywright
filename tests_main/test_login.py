@@ -22,7 +22,3 @@ def test_login(playwright: Playwright, username, password) -> None:
         # Cleanup
         context.close()
         browser.close()
-
-
-#with sync_playwright() as playwright:
- #   test_login(playwright)
