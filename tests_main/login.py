@@ -12,5 +12,3 @@ class LoginTest:
         self.page.locator("[data-test=\"password\"]").fill(password)
         self.page.locator("[data-test=\"login-button\"]").click()
         expect(self.page.locator("#logout_sidebar_link")).to_be_enabled()
-
-
