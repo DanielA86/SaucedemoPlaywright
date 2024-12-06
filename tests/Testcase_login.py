@@ -1,8 +1,7 @@
-
-from playwright.sync_api import sync_playwright
+from playwright.sync_api import Playwright, sync_playwright, expect
 from login_test import LoginTest
 
-def run(playwright: playwright) -> none:
+def run(playwright: Playwright) -> None:
         browser = playwright.chromium.launch(headless=False)
         context = browser.new_context()
         page = context.new_page()
@@ -16,3 +15,7 @@ def run(playwright: playwright) -> none:
         # Cleanup
         context.close()
         browser.close()
+
+
+with sync_playwright() as playwright:
+    run(playwright)
