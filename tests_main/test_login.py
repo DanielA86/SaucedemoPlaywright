@@ -48,3 +48,5 @@ def test_buy_product(playwright: Playwright, username, password) -> None:
         page.locator("[data-test=\"finish\"]").click()
         page.locator("[data-test=\"back-to-products\"]").click()
         expect(page.locator(".shopping_cart_badge")).not_to_be_visible()
+        page.locator("#react-burger-menu-btn").click()
+        page.locator("#logout_sidebar_link").click()
